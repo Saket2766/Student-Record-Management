@@ -1,0 +1,13 @@
+.main{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    column-gap: 20px;
+}
+.panel{
+    grid-column-start: 6;
+    grid-column-end: 12;
+    background-color: #1E1E1E;
+    color: #F4F4F6;
+}
