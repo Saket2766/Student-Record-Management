@@ -1,13 +1,48 @@
 .main{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: auto;
-    justify-content: center;
-    column-gap: 20px;
+    max-width: 1200px;
+    min-height: 85vh;
+    margin: 0 auto;
 }
+
+.svg{
+    max-width: 460px;
+    margin: auto 0;
+    grid-column: 1/5;
+}
+
 .panel{
     grid-column-start: 6;
-    grid-column-end: 12;
+    grid-column-end: 13;
+    min-height: 60%;
     background-color: #1E1E1E;
+    margin : auto 0;
+    padding: 10px;
+    border-radius: 20px;
     color: #F4F4F6;
+}
+
+h1{
+    font-size: 48px;
+    background-image: linear-gradient(#F4F4F6 20%,#4d88ff);
+    background-clip: text;
+    color: transparent;
+}
+h2{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.panel a{
+    background-color: #4d88ff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: inherit;
+}
+
+.panel a:hover{
+    background-color: #F4F4F6;
+    color: #4d88ff;
 }
