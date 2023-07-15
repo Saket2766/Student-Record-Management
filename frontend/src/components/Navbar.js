@@ -4,8 +4,9 @@ const Navbar = () => {
     return ( 
         <header>
             <div className="nav-wrapper">
-                <div className ="Logo">
-                    Grade Check
+                <div className="Logo">
+                    <img src="/icon.svg" alt="Clipboard with check mark" class="icon"></img>
+                    <div>Grade Check</div>
                 </div>
                 <nav>
                     <ul>

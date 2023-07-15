@@ -3,6 +3,17 @@
 *, *::before, *::after{
   box-sizing: border-box;
 }
+/* 
+  Colours:
+    Blues:
+      #213866
+      #7CA7FF (background)
+      #497DE6 (button/highlight)
+      #3F4C66
+      #3962B3
+    Black: #1e1e1e
+    White: #f4f4f6
+*/
 
 body {
   margin: 0;
@@ -24,13 +35,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
+  height: 10vh;
 }
 
-.Logo{
 
+
+.Logo{
+  display: flex;
+  gap: 10px;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 24px;
 }
 
 nav{
@@ -48,13 +62,14 @@ nav ul{
 }
 
 nav a{
+  text-align: right;
   text-decoration: none;
   padding: 1rem;
   font-size: 24px;
   color: inherit;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 nav a:hover{
-  color: #4d88ff;
+  color: #497DE6;
 }
