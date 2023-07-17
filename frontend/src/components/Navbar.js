@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useUserContext } from "../hooks/useUserContext";
 
 const Navbar = () => {
+    const {role} = useUserContext();
+    console.log("navbar",role);
     return ( 
         <header>
             <div className="nav-wrapper">
@@ -10,8 +13,7 @@ const Navbar = () => {
                 </div>
                 <nav>
                     <ul>
-                        <li><Link to ='/login' >Log In</Link></li>
-                        <li><Link to ='/signup' >Sign Up</Link></li>
+                        {role && <li><Link to ='/logout' >Log Out</Link></li>}
                     </ul> 
                 </nav>
             </div>    

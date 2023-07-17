@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import '../styles/home.css'
+import { useLogin } from '../hooks/useLogin';
 
 const Home = () => {
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
-    const [error, setError] = useState(null);
+ 
+    const {login,error,isLoading} = useLogin();
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
+
+        await login(username,password);
     }
 
     return ( 
@@ -25,7 +29,7 @@ const Home = () => {
                         <label>Password:</label>
                         <input type="password" value={password} onChange={(e) =>{setPassword(e.target.value)}} />
                         { error && <p className='error'>{error}</p>}
-                        <center><button>Log In</button></center>
+                        <center><button disabled={isLoading}>Log In</button></center>
                     </fieldset>
                    
                 </form>
