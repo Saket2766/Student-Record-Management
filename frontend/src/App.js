@@ -12,6 +12,7 @@ import StudentDashboard from './pages/StudentDashboard';
 function App() {
 
   const {role} = useUserContext();
+  console.log("app.js",role)
 
   const selectDashboard = (role) => {
     switch(role){
