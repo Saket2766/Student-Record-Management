@@ -61,15 +61,29 @@ nav ul{
   padding: 0;
 }
 
-nav a{
+nav button{
   text-align: right;
   text-decoration: none;
+  background-color: inherit;
+  border: 0;
   padding: 1rem;
   font-size: 24px;
   color: inherit;
   font-weight: 400;
 }
 
-nav a:hover{
+nav button:hover{
   color: #497DE6;
+}
+
+@media screen and (max-width : 880px) {
+  .Logo{
+    font-size: 18px;
+  }
+  .icon{
+    width: 15px;
+  }
+  nav button{
+    font-size: 18px;
+  }
 }

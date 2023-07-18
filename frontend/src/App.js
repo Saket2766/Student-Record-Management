@@ -9,10 +9,10 @@ import AdminDashboard from './pages/AdminDashboard';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 
+
 function App() {
 
-  const {role} = useUserContext();
-  console.log("app.js",role)
+  const {user} = useUserContext();
 
   const selectDashboard = (role) => {
     switch(role){
@@ -23,7 +23,7 @@ function App() {
       case "student":
         return (<StudentDashboard/>)
       default:
-        return (<Home/>)
+        return (<Home/>);
     }
   }
 
@@ -34,15 +34,17 @@ function App() {
         <Routes>
           <Route
             path = '/'
-            element ={ (!role)? <Home/> : <Navigate replace to='/dashboard'/>}
+            element ={ (!user)? <Home/> : <Navigate to='/dashboard'/>}
+
           />
           <Route
             path='/dashboard'
-            element = {selectDashboard(role)}
+            element = { user? selectDashboard(user.role): <Navigate to='/'/>}
           />
+          
           <Route
             path ='*'
-            element = {<h1>Error 404 : Not Found</h1>}
+            element = {<h1 style={{padding : "20px", textAlign: "center"}}>Error 404 : Not Found</h1>}
           />
         </Routes>
       </BrowserRouter> 

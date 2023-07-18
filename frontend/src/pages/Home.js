@@ -18,7 +18,7 @@ const Home = () => {
         <div className='main'>
             <img src="/online_test.svg" alt="Computer Screen" className='svg' />
 
-            <h1>Start Improving. Stop Ignoring.</h1>
+            <h1>Start Improving.<br/>Stop Ignoring.</h1>
 
             <div className="panel">
                 <form onSubmit={handleSubmit}>

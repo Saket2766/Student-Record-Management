@@ -1,19 +1,19 @@
-import { Link } from "react-router-dom";
 import { useUserContext } from "../hooks/useUserContext";
+import {useLogout} from '../hooks/useLogout';
 
 const Navbar = () => {
-    const {role} = useUserContext();
-    console.log("navbar",role);
+    const context = useUserContext();
+    const {logout} = useLogout();
     return ( 
         <header>
             <div className="nav-wrapper">
                 <div className="Logo">
-                    <img src="/icon.svg" alt="Clipboard with check mark" class="icon"></img>
+                    <img src="/icon.svg" alt="Clipboard with check mark" className="icon"></img>
                     <div>Grade Check</div>
                 </div>
                 <nav>
                     <ul>
-                        {role && <li><Link to ='/logout' >Log Out</Link></li>}
+                        { context.user && <li><button onClick={logout}>Log Out</button></li> }
                     </ul> 
                 </nav>
             </div>    
