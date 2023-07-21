@@ -16,6 +16,10 @@ const subjectSchema = new Schema({
 });
 
 const semseterSchema = new Schema({
+    semNum:{
+        type: "Number",
+        required: true
+    },
     subjects : [subjectSchema]
 });
 
