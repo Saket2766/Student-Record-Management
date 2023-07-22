@@ -18,10 +18,10 @@ const Home = () => {
         <div className='main'>
             <img src="/online_test.svg" alt="Computer Screen" className='svg' />
 
-            <h1>Start Improving.<br/>Stop Ignoring.</h1>
+            <h1 className='hero-heading'>Start Improving.<br/>Stop Ignoring.</h1>
 
             <div className="panel">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='login'>
                     <fieldset>
                         <legend>Log In</legend>
                         <label>Username:</label>

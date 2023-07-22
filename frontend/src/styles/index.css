@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  background-color: #7CA7FF;
+  background-color: #93b7fe;
   color: #1E1E1E;
   font-family: Poppins, sans-serif;
 }
@@ -86,4 +86,5 @@ nav button:hover{
   nav button{
     font-size: 18px;
   }
+  
 }

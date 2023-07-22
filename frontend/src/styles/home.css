@@ -6,7 +6,7 @@
     min-height: 90vh;
     margin: 0 auto;
 }
-h1{
+.hero-heading{
     letter-spacing: -0.6px;
     line-height: 79px;
     margin: auto 10px;
@@ -37,35 +37,35 @@ h1{
     color: #F4F4F6;
 }
 
-form{
+.login{
     max-width: 300px;
     margin: 0 auto;
 }
 
-fieldset{
+.login fieldset{
     border: 1px solid #F4F4F6;
     padding: 15px;
 }
 
-legend{
+.login legend{
     text-align: center;
     font-size: 18px;
     letter-spacing: -0.1px;
     font-weight: 500;
 }
 
-label,input{
+.login label,input{
     display: block;
 }
 
-label{
+.login label{
     margin-top: 10px;
     font-size: 18px;
     font-family: Poppins,sans-serif;
     font-weight: 300;
 }
 
-input{
+.login input{
     margin: 10px auto;
     padding: 10px;
     border-radius: 5px;
@@ -76,7 +76,7 @@ input{
     box-sizing: border-box;
     border: 0;
 }
-input:focus{
+.login input:focus{
     box-shadow: none;
     border: 0;
 }
@@ -117,7 +117,7 @@ input:focus{
     .svg{
         display: none;
     }
-    h1{
+    .hero-heading{
         flex-grow: 1;
         padding: 20px;
         font-size: 68px;
