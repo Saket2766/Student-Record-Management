@@ -39,6 +39,7 @@
     text-align: left;
     padding: 1rem 2rem;
     width: 100%;
+    transition: 0.3s;
 }
 
 .sidebar-nav button:hover{
@@ -54,6 +55,30 @@
     border-radius: 10px;
 }
 
+form{
+    width: 90%;
+    box-sizing: border-box;
+    margin: 10px auto;
+}
+label,select{
+    display: block;
+}
+.flex-form{
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+select{
+    width: fit-content;
+    font-family: Poppins,sans-serif;
+    outline: 0px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding: 5px;
+    background-color: inherit;
+}
+
+
 .hidden{
     display: none;
-  }
+}

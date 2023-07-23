@@ -7,7 +7,7 @@
   Colours:
     Blues:
       #213866
-      #7CA7FF (background)
+      #7CA7FF / #a5d8ff (background)
       #497DE6 (button/highlight)
       #3F4C66
       #3962B3
@@ -17,8 +17,8 @@
 
 body {
   margin: 0;
-  background-color: #93b7fe;
-  color: #1E1E1E;
+  background-color: #0D229C;
+  color: #212529;
   font-family: Poppins, sans-serif;
 }
 

@@ -14,6 +14,7 @@ const AdminDashboard = () => {
     const manageUser = useRef();
     const changePassword = useRef();
 
+    //functions to show the different components
     const showCreateUser = () =>{
         setIsCreateHidden(false);
         setIsManageHidden(true);
@@ -55,6 +56,7 @@ const AdminDashboard = () => {
 
         updateHidden();
     },[isCreateHidden,isChangePasswordHidden,isManageHidden]);
+    
     return (
         <div className="admin-main">
             <div className="admin-sidebar">

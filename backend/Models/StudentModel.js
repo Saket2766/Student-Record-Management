@@ -18,7 +18,8 @@ const subjectSchema = new Schema({
 const semseterSchema = new Schema({
     semNum:{
         type: "Number",
-        required: true
+        required: true,
+        min: 1
     },
     subjects : [subjectSchema]
 });
