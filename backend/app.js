@@ -7,6 +7,7 @@ const cors = require('cors');
 
 //routers
 const authRouter = require('./routes/userAuthRoutes');
+const teacherRouter = require('./routes/teacherRoutes');
 
 //Set CORS Policy
 server.use(cors({
@@ -20,8 +21,8 @@ mongoose.connect(process.env.MONGO_URI,
         server.listen(process.env.PORT, () => {
             console.log("Connected to DB. Server listening on port 4000")
         })
-    }
-    ).catch((err) => {
+    })
+    .catch((err) => {
         console.log(err);
     })
 
@@ -38,3 +39,5 @@ server.get('/', (req, res) => {
 })
 //auth Routes
 server.use('/api/user',authRouter);
+//teacher data Routes
+server.use('/api/user',teacherRouter);

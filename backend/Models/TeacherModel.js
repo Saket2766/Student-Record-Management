@@ -7,10 +7,7 @@ const subjectSchema = new Schema({
         type: "String",
         required: true
     },
-    sections : [{
-        type: "String",
-        required: true
-    }]
+    sections : [String]
 })
 
 const teacherSchema = new Schema({
@@ -25,5 +22,14 @@ const teacherSchema = new Schema({
     },
     subjects: [subjectSchema]
 })
+
+teacherSchema.statics.add = async function (name,username,subjects){
+    try{
+        const teacher = await this.create({name,username,subjects});
+        return teacher;
+    }catch(err){
+        console.log(err);
+    }   
+}
 
 module.exports = mongoose.model('Teacher',teacherSchema);
