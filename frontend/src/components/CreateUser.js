@@ -15,6 +15,10 @@ const CreateUser = () => {
                     <option value="student">Student</option>
                 </select>
             </div>
+            <div className="flex-form">
+                <label>Password:</label>
+                <input type="password"/>
+            </div>
         </form>
      );
 }

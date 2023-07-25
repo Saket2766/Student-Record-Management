@@ -43,7 +43,7 @@
 }
 
 .sidebar-nav button:hover{
-    background-color: #497DE6;
+    background-color: #141a24;
     color: #f4f4f6;
     cursor: pointer;
 }
@@ -60,6 +60,11 @@ form{
     box-sizing: border-box;
     margin: 10px auto;
 }
+
+/* form h1{
+    color: #0D229C;
+} */
+
 label,select{
     display: block;
 }
