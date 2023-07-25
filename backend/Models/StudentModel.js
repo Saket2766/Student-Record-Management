@@ -46,4 +46,13 @@ const studentSchema = new Schema({
     semesters: [semseterSchema]
 });
 
+studentSchema.statics.add = async function(username,name,roll,clss,semesters) {
+    try{
+        const student = await this.create({name,username,roll,class:clss,semesters});
+        return student;
+    }catch(err){
+        console.log(err);
+    }   
+}
+
 module.exports = mongoose.model('Student',studentSchema);
