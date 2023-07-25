@@ -9,6 +9,7 @@ const cors = require('cors');
 const authRouter = require('./routes/userAuthRoutes');
 const teacherRouter = require('./routes/teacherRoutes');
 
+
 //Set CORS Policy
 server.use(cors({
     origin : "*"

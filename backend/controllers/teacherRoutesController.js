@@ -25,7 +25,9 @@ const putTeacher = async(req,res) =>{
 
 //delete teacher
 const deleteTeacher = async(req,res) =>{
-
+    const {username} = req.body;
+    const teacher = await Teacher.deleteOne({username});
+    res.status(200).json({teacher});
 }
 
 module.exports = {getTeacher,postTeacher,putTeacher,deleteTeacher};

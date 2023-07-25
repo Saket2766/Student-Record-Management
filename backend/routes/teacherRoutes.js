@@ -6,6 +6,10 @@ const {getTeacher,
     putTeacher,
     deleteTeacher} = require('../controllers/teacherRoutesController');
 
+//authentication
+const atAuth = require('../middleware/atRequireAuth');
+
+router.use(atAuth);
 //get teacher data
 router.get('/teacher', getTeacher);
 
