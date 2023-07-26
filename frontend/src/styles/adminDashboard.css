@@ -59,30 +59,38 @@ form{
     width: 90%;
     box-sizing: border-box;
     margin: 10px auto;
+    font-size: 18px;
 }
 
-/* form h1{
-    color: #0D229C;
-} */
+form h1{
+    font-weight: 500;
+    font-size: 36px;
+}
 
-label,select{
+label,select,input{
     display: block;
 }
+
 .flex-form{
     display: flex;
     align-items: baseline;
     gap: 20px;
 }
+
+input{
+    outline: 0;
+    padding: 3px;
+}
+
 select{
     width: fit-content;
     font-family: Poppins,sans-serif;
     outline: 0px;
     border-radius: 3px;
-    border: 1px solid gray;
+    border: 1px solid #141a24;
     padding: 5px;
     background-color: inherit;
 }
-
 
 .hidden{
     display: none;
