@@ -7,9 +7,9 @@ const {getTeacher,
     deleteTeacher} = require('../controllers/teacherRoutesController');
 
 //authentication
-const atAuth = require('../middleware/atRequireAuth');
+const Auth = require('../middleware/RequireAuth');
 
-router.use(atAuth);
+router.use(Auth("teacher"));
 //get teacher data
 router.get('/teacher', getTeacher);
 
