@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/UserModel');
 
-const requireAuth = (role) => { 
+const requireAuth = (...roles) => { 
         return async(req,res,next) =>{
         const {authorization} = req.headers;
 
@@ -16,11 +16,12 @@ const requireAuth = (role) => {
 
             req.user = await User.findOne({_id});
 
-            if (req.user.role === role){
-                next();
-            }else{
-                res.status(401).json({error:"authorization required"});
+            for (let role in roles){
+                if (req.user.role === role){
+                    next();
+                }
             }
+            res.status(401).json({error:"authorization required"});
             
         }catch(err){
             res.status(401).json({error:"authorization required"});
