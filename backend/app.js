@@ -8,7 +8,7 @@ const cors = require('cors');
 //routers
 const authRouter = require('./routes/userAuthRoutes');
 const teacherRouter = require('./routes/teacherRoutes');
-
+const studentRouter = require('./routes/studentRoutes');
 
 //Set CORS Policy
 server.use(cors({
@@ -42,3 +42,5 @@ server.get('/', (req, res) => {
 server.use('/api/user',authRouter);
 //teacher data Routes
 server.use('/api/user',teacherRouter);
+//student data Routes
+server.use('/api/user',studentRouter);
