@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 *, *::before, *::after{
   box-sizing: border-box;
 }
@@ -17,74 +16,94 @@
 
 body {
   margin: 0;
-  background-color: #0D229C;
-  color: #141a24;
-  font-family: Poppins, sans-serif;
+  padding: 0;
+  background-color: #F8F9FA;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
 }
 
 header {
-  background-color: #f4f4f6;
   width: 100%;
 
 }
 
 .nav-wrapper{
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(12, [col-start] 1fr);
   height: 10vh;
 }
 
-
-
 .Logo{
   display: flex;
+  align-items: center;
+  grid-column: col-start 4 / span 3;
   gap: 10px;
   font-weight: 600;
   font-size: 24px;
 }
 
 nav{
-
   display: flex;
-  justify-content: space-between;
-
+  align-items: center;
+  
+  grid-column: col-start 8 / span 4;
 }
 
 nav ul{
   display: flex;
+  width: 100%;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
+nav li{
+  width: 25%;
+}
 nav button{
-  text-align: right;
   text-decoration: none;
   background-color: inherit;
   border: 0;
-  padding: 1rem;
-  font-size: 24px;
+  padding: 0;
+  font-size: 16px;
   color: inherit;
   font-weight: 400;
 }
 
-nav button:hover{
-  color: #497DE6;
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
-@media screen and (max-width : 880px) {
+nav button:hover{
+  color: #4C6EF5;
+}
+
+@media screen and (max-width : 768px) {
   .Logo{
     font-size: 18px;
   }
   .icon{
     width: 15px;
   }
-  nav button{
-    font-size: 18px;
+  .nav-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  nav{
+    width: 100%;
+  }
+  nav ul {
+    width: 100%;
+    justify-content: space-around;
+  }
+  nav li{
+    width: max-content;
   }
   
 }

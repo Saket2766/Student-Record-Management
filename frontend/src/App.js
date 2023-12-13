@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 
 //pages
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import AdminDashboard from './pages/AdminDashboard';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
@@ -41,7 +42,11 @@ function App() {
             path='/dashboard'
             element = { user? selectDashboard(user.role): <Navigate to='/'/>}
           />
-          
+          <Route
+            path = '/login'
+            element ={(!user)? <Login/> : <Navigate to='/dashboard'/>}
+
+          />
           <Route
             path ='*'
             element = {<h1 style={{padding : "20px", textAlign: "center"}}>Error 404 : Not Found</h1>}
