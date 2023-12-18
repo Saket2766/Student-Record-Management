@@ -29,8 +29,16 @@ const CreateUser = () => {
                 <label>Roll No</label>
                 <input type="text"/>
 
-                <label>Class</label>
+                <label>Section</label>
                 <input type="text"/>
+
+                <label>Select Sections</label>
+                <select required>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                </select>
             </div>
 
             <div className="teacher">
