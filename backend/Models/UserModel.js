@@ -40,8 +40,6 @@ userSchema.statics.register = async function(username,password,role,organisation
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password,salt);
 
-    console.log(organisation);
-
     //add user to db
     const user = await this.create({username,password:hash,role,organisation});
     

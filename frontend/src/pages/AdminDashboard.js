@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "../styles/adminDashboard.css";
 import CreateUser from '../components/CreateUser';
 import ManageUser from "../components/ManageUser";
+import { useLogout } from "../hooks/useLogout";
 
 const AdminDashboard = () => {
     //check which sections to display
@@ -32,6 +33,8 @@ const AdminDashboard = () => {
         setIsManageHidden(true);
         setIsChangePasswordHidden(false);
     }
+
+    const {logout} = useLogout(); 
 
     useEffect(()=>{
         const updateHidden = () => {
@@ -64,6 +67,7 @@ const AdminDashboard = () => {
                     <li><button onClick={showCreateUser}>Create User</button></li>
                     <li><button onClick={showManageUser}>Manage Users</button></li>
                     <li><button onClick={showChangePassword}>Change Password</button></li>
+                    <li><button onClick={logout}>Logout</button></li>
                 </ul>
             </div>
 

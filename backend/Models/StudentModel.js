@@ -56,7 +56,7 @@ studentSchema.statics.add = async function(username,name,roll,clss,semesters) {
         return student;
     }catch(err){
         console.log(err);
-    }   
+    }
 }
 
 module.exports = mongoose.model('Student',studentSchema);
