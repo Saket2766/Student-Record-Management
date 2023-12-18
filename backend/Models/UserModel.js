@@ -18,14 +18,18 @@ const userSchema = new Schema(
         role :{
             type: "String",
             required: true
+        },
+        organisation :{
+            type: "String",
+            required: true,
         }
     }
 )
 
 //function to sign up users
 //admin access only 
-userSchema.statics.register = async function(username,password,role){
-    if(!username || !password || !role){
+userSchema.statics.register = async function(username,password,role,organisation){
+    if(!username || !password || !role || !organisation){
         throw Error("Fill Every Field");
     }
 
@@ -36,8 +40,11 @@ userSchema.statics.register = async function(username,password,role){
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password,salt);
 
+    console.log(organisation);
+
     //add user to db
-    const user = await this.create({username,password:hash,role});
+    const user = await this.create({username,password:hash,role,organisation});
+    
     return user;
 }
 

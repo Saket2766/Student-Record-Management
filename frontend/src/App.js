@@ -1,11 +1,12 @@
 import {BrowserRouter,Routes,Route, Navigate} from 'react-router-dom';
 import { useUserContext } from './hooks/useUserContext';
 //components
-import Navbar from "./components/Navbar";
+
 
 //pages
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar/>
+        
         <Routes>
           <Route
             path = '/'
@@ -48,8 +49,13 @@ function App() {
 
           />
           <Route
+            path = '/register'
+            element ={(!user)? <Register/> : <Navigate to='/dashboard'/>}
+
+          />
+          <Route
             path ='*'
-            element = {<h1 style={{padding : "20px", textAlign: "center"}}>Error 404 : Not Found</h1>}
+            element = {<h1 style={{padding : "20px", textAlign: "center"}}>Error 404 : Page Not Found</h1>}
           />
         </Routes>
       </BrowserRouter> 

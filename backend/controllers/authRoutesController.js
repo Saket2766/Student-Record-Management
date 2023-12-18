@@ -7,13 +7,14 @@ const createToken = (_id) => {
 
 const register = async (req,res) => {
 
-    const {username,password,role} = req.body;
+    const {username,password,role,organisation} = req.body;
 
     try{
-        const user = await User.register(username,password,role);
-        res.status(200).json({user});
+        const user = await User.register(username,password,role,organisation);
+        const jwt = createToken(user._id);
+        res.status(200).json({role:user.role,jwt});
     }catch(error){
-        res.status(401).json({error:error});
+        res.status(401).json({error:error.message});
     }
 }
 
