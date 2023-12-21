@@ -63,12 +63,19 @@ const AdminDashboard = () => {
     return (
         <div className="admin-main">
             <div className="admin-sidebar">
-                <ul className="sidebar-nav">
-                    <li><button onClick={showCreateUser}>Create User</button></li>
-                    <li><button onClick={showManageUser}>Manage Users</button></li>
-                    <li><button onClick={showChangePassword}>Change Password</button></li>
-                    <li><button onClick={logout}>Logout</button></li>
-                </ul>
+                <div className="sidebar-nav">
+                    <div className="profile-bg">
+                        <img src="/user-circle-thin.svg" alt="profile"/>
+                    </div>
+                    <div className="button-container">
+                        <button onClick={showCreateUser}>Create User</button>
+                        <button onClick={showManageUser}>Manage Users</button>
+                    </div>
+                    <div className="option-container">
+                        <button onClick={showChangePassword}><img src="/gear-thin.svg" alt="settings" /></button>
+                        <button onClick={logout}><img src="/x.svg" alt="logout"/></button>
+                    </div>
+                </div>
             </div>
 
             <section className="admin-section">

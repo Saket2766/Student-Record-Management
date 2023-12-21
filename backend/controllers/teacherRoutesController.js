@@ -15,7 +15,7 @@ const postTeacher = async (req,res) =>{
     const {name,username,subjects} = req.body;
     const teacher = await Teacher.add(name,username,subjects);
 
-    res.status(200).json({teacher});
+    res.status(200).json({teacherUsr:teacher.username});
 }
 
 //update teacher details
