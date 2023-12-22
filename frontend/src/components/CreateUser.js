@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from 'react';
+import {useState, useRef} from 'react';
 
 const CreateUser = () => {
 
@@ -45,10 +45,36 @@ const CreateUser = () => {
         setSubjects([...subjects,subject]);
     }
 
+    const handleSectionSelect = (e) => {
+        setCurSection(e.target.value);
+        if(e.target.value){
+            setTchSections([...tchSections,e.target.value]);
+        }
+    }
+
+    const removeSection = (sct) => {
+        let filteredArray = tchSections.filter( (item) => item !== sct);
+        setTchSections(filteredArray);
+    }
+
+    const displaySelectedSections = () => {
+
+        const Tsection = ({name}) => {
+            return (
+                <div className='section-card' onClick={(e) => removeSection(name)}>
+                    {name}
+                </div>
+            );
+        }
+
+        return tchSections.map( (sct,idx) => 
+            <Tsection key = {idx} name = {sct}/>
+        );
+    }
+
     const handleSubmit = (e) =>{
         e.preventdefault();
     }
-
 
     return ( 
         <form onSubmit={handleSubmit}>
@@ -88,7 +114,7 @@ const CreateUser = () => {
 
             <div ref={teacherPanel} className='hidden'>
                 <label>Subjects</label>
-                <select required value={curSubject} onChange={(e) => setCurSubject(e.target.value)}>
+                <select required value={curSubject} onChange={(e) => {setCurSubject(e.target.value);setTchSections([]);}}>
                     <option value="">Select...</option>
                     <option value="Classical Physics">Classical Physics</option>
                     <option value="Mathematics-I">Mathematics-I</option>
@@ -98,14 +124,17 @@ const CreateUser = () => {
                 </select>
 
                 <label>Select Sections</label>
-                <select required value={curSection} onChange={(e) => setCurSection(e.target.value)}>
+                <select required value={curSection} onChange={handleSectionSelect}>
                     <option value="">Select...</option>
                     <option value="A1">A1</option>
                     <option value="A2">A2</option>
                     <option value="B1">B1</option>
                     <option value="B2">B2</option>
                 </select>
-
+                <label>Sections Selected </label>
+                <div className="selected-sections">
+                    {displaySelectedSections()}
+                </div>
                 <button type='button' onClick={handleAddSubject}>Add Subject</button>
             </div>
         </form>
