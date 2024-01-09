@@ -5,7 +5,9 @@
     row-gap: 10px;
     column-gap: 10px;
     min-height: 100vh;
-    background: linear-gradient(to bottom right,rgba(145,167,255,1),rgba(37, 58, 142,0.95));
+    background: linear-gradient(to bottom,rgba(145,167,255,1),rgba(37, 58, 142,0.95)),
+    linear-gradient(to bottom right,rgba(37,58,142,0.2),rgba(37, 58, 142,0.4));
+    background-blend-mode: darken;
 }
 
 .admin-sidebar{
@@ -58,7 +60,7 @@
     border: 0px;
     margin-bottom: 10px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     height: 25%;
     border-radius: 20px;
@@ -100,29 +102,38 @@
     box-sizing: border-box;
     grid-column: 5/13;
     grid-row: 1/7;
-    background-color: #F8F9FA;
+    background-color: #FFF;
     margin: 0;
     padding: 0;
 }
-
 .create-user{
-
     box-sizing: border-box;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(8,1fr);
+    gap: 10px;
 }
 
-form{
-    width: 90%;
-    box-sizing: border-box;
-    margin: 10px auto;
-    font-size: 18px;
+.create-user form{
+    padding: 0 16.67%;
+    grid-row: 2/5;
+    grid-column: 2/8;
 }
 
-form h1{
-    font-weight: 500;
+.create-user h1{
+    margin: 0;
+    padding: 0;
+    height: 16.67%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    color: #000;
     font-size: 36px;
 }
 
