@@ -19,9 +19,10 @@ const userSchema = new Schema(
             type: "String",
             required: true
         },
-        organisation :{
+        orgName :{
             type: "String",
             required: true,
+            unique: true
         }
     }
 )
