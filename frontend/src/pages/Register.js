@@ -5,6 +5,18 @@ const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [organisation, setOrganisation] = useState('');
+    const defaultUserData = {
+        username : '',
+        password : '',
+        role : '',
+        orgName : '',
+    }
+    const defaultOrgData ={
+        
+    }
+
+    const [userData,setUserData] = useState(defaultUserData);
+    const [orgData,setOrgData] = useState(defaultOrgData);
 
     const { register, error, isLoading } = useRegister();
 

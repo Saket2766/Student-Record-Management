@@ -41,7 +41,7 @@
 }
 .login-form button{
     margin-top: 20px;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 10px;
     background-color: #4C6EF5;
@@ -50,6 +50,9 @@
     font-size: 16px;
     font-weight: 600;
     color: #fff;
+}
+.login-form button:hover{
+    background-color: #222222;
 }
 .error{
     color: indianred;
