@@ -12,11 +12,17 @@ const Register = () => {
         orgName : '',
     }
     const defaultOrgData ={
-        
+        orgName : '',
+        programs : '',
+    }
+    const defaultProgramData={
+        progName : '',
+        courses : []
     }
 
     const [userData,setUserData] = useState(defaultUserData);
     const [orgData,setOrgData] = useState(defaultOrgData);
+    const [programData,setProgramData] = useState(defaultProgramData);
 
     const { register, error, isLoading } = useRegister();
 

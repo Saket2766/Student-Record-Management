@@ -9,7 +9,7 @@ const programSchema = new Schema({
         unique: true
     },
     courses : [{
-        courseName : { type : String, unique : true}
+        courseName : { type : String}
     }]
 });
 
