@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const programSchema = new Schema({
-    progName :{
+const departmentSchema = new Schema({
+    depName :{
         type: "String",
         required: true,
         unique: true
@@ -19,8 +19,8 @@ const organisationSchema = new Schema ({
         required: true,
         unique: true
     },
-    programs : [programSchema],
-    
+    department : [departmentSchema],
+    programs : [{ type: "String", required: true}],
 });
 
 organisationSchema.statics.add = async function(orgName,programs){

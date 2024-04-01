@@ -47,6 +47,10 @@ const studentSchema = new Schema({
         type: "String",
         required: true
     },
+    program: {
+        type: "String",
+        required: true
+    },
     semesters: [semseterSchema]
 });
 
