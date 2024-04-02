@@ -25,6 +25,7 @@ const Register = () => {
   const [courses, setCourses] = useState([]);
   const [programs, setPrograms] = useState([]);
   const [isUserFilled, setIsUserFilled] = useState(false);
+  const [isDepartmentFilled, setIsDepartmentFilled] = useState(false);
 
   const { register, error, isLoading } = useRegister();
 
@@ -85,11 +86,7 @@ const Register = () => {
             onChange={handleProgramChange}
           />
           <label>Name of Course</label>
-          <input
-            type="text"
-            name="courseName"
-            ref={courseRef}
-          />
+          <input type="text" name="courseName" ref={courseRef} />
           <button
             type="button"
             className="sec-button"
@@ -104,6 +101,14 @@ const Register = () => {
             <p className=" my-4 text-sm italic">No Courses added</p>
           )}
           <button disabled={isLoading}>Submit</button>
+          {error && <p className="error">{error}</p>}
+        </form>
+      ) : isDepartmentFilled ? (
+        <form className="login-form">
+          <label>Program Name</label>
+          <input type="text" />
+          <button>Add Program</button>
+          <label>List of added programs:</label>
           {error && <p className="error">{error}</p>}
         </form>
       ) : (
